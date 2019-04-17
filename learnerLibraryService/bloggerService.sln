@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bloggerService", ".", "{7EEBE323-9719-41D7-B342-6F1165BEA2CC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59602"
+		Debug.AspNetCompiler.PhysicalPath = "F:\MeanStack-master\bloogerapp\bloggerService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59602\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59602"
+		Release.AspNetCompiler.PhysicalPath = "F:\MeanStack-master\bloogerapp\bloggerService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59602\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59602"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bloggerWeb", "..\bloggerWeb\", "{208B7D26-6B96-41A8-AECC-BE70B3506FEE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59604"
+		Debug.AspNetCompiler.PhysicalPath = "F:\MeanStack-master\bloogerapp\bloggerWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59604\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59604"
+		Release.AspNetCompiler.PhysicalPath = "F:\MeanStack-master\bloogerapp\bloggerWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59604\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59604"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EEBE323-9719-41D7-B342-6F1165BEA2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EEBE323-9719-41D7-B342-6F1165BEA2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208B7D26-6B96-41A8-AECC-BE70B3506FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208B7D26-6B96-41A8-AECC-BE70B3506FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {935A2ACE-6CAF-45EC-AC5C-6FC831AF2426}
+	EndGlobalSection
+EndGlobal

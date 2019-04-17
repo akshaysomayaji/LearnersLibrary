@@ -1,0 +1,21 @@
+﻿<div class="w3-row w3-padding-large w3-card-2" ng-repeat="data in formData">
+    <div class="w3-col">
+        <h1 class="w3-text-teal">{{data.notificationHeading}}</h1>
+        <p> <b> Name : </b>{{data.notificationName}}</p>
+        <p ng-bind-html="data.notificationDetails"></p>
+        <p><b> Posted Date : </b> {{data.notificationPostedDate | date:"fullDate" }}</p>
+        <p ng-if="data.startDateforApply"><b> Start Date to Apply : </b> {{data.startDateforApply | date:"dd-MMM-yyyy" }}</p>
+        <p ng-if="data.lastDateforApply"><b> Last Date to Apply : </b> {{data.lastDateforApply | date:"dd-MMM-yyyy" }}</p>
+        <p ng-if="data.examDate"><b> Exam Date : </b> {{data.examDate | date:"dd-MMM-yyyy" }}</p>
+    </div>
+</div>
+<!-- Pagination -->
+<div class="w3-center w3-padding-32">
+    <div class="w3-bar" ng-if="pager.pages && pager.pages.length">
+        <a class="w3-button w3-hover-black w3-gray" ng-class="{'w3-disabled':pager.currentPage === 1}" ng-click="setPage(1)">First</a>
+        <a class="w3-button w3-hover-black w3-gray" ng-class="{'w3-disabled':pager.currentPage === 1}" ng-click="setPage(1)">Previous</a>
+        <a ng-repeat="page in pager.pages" class="w3-button w3-hover-black" ng-class="pager.currentPage === page ? ' w3-black':' w3-gray'" ng-click="setPage(page)">{{page}}</a>
+        <a class="w3-button w3-gray w3-hover-black" ng-class="{'w3-disabled':pager.currentPage === pager.totalPages}" ng-click="setPage(pager.totalPages)">Next</a>
+        <a class="w3-button w3-gray w3-hover-black" ng-class="{'w3-disabled':pager.currentPage === pager.totalPages}" ng-click="setPage(pager.totalPages)">Last</a>
+</div>
+</div>

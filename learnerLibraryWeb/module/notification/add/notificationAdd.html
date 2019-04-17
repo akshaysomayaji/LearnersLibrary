@@ -1,0 +1,54 @@
+﻿<!-- Tabs -->
+<div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
+    <h3>Travel the world with us</h3>
+    <form name="notificationFrm">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-third">
+                <label>Notification Title</label>
+                <input class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.notificationHeading.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.notificationHeading.$valid &&  notificationFrm.$submitted }" type="text" name="notificationHeading" placeholder="Notification Title" ng-model="formData.notificationHeading" ng-required="true">
+            </div>
+            <div class="w3-third">
+                <label>Notification Name</label>
+                <input class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.notificationName.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.notificationName.$valid &&  notificationFrm.$submitted }" type="text" name="notificationName" placeholder="Notification Name" ng-model="formData.notificationName" ng-required="true">
+            </div>
+
+            <div class="w3-third">
+                <label>Notification Type</label>
+                <input class="w3-input w3-border" type="text" name="notificationType" ng-class="{ 'w3-border-red' : notificationFrm.notificationType.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.notificationType.$valid &&  notificationFrm.$submitted }" placeholder="Notification Type" ng-model="formData.notificationType" ng-required="true">
+            </div>
+        </div>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-col">
+                <label>Notification Title</label>
+                <textarea class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.notificationDetails.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.notificationDetails.$valid &&  notificationFrm.$submitted }" name="notificationDetails" placeholder="Notification Details" ng-model="formData.notificationDetails" ng-required="true"></textarea>
+            </div>
+        </div>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-half">
+                <label>Notification Links</label>
+                <input class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.notificationReferenceLink.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.notificationReferenceLink.$valid &&  notificationFrm.$submitted }" type="text" name="notificationReferenceLink" placeholder="Notification Links" ng-model="formData.notificationReferenceLink" ng-required="true">
+            </div>
+            <div class="w3-half">
+                <label>Posted Date</label>
+                <input class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.notificationPostedDate.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.notificationPostedDate.$valid &&  notificationFrm.$submitted }" type="date" name="notificationPostedDate" placeholder="Notification Posted Date" ng-model="formData.notificationPostedDate" ng-required="true">
+            </div>
+        </div>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-half">
+                <label>Start Date To Apply</label>
+                <input class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.startDateforApply.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.startDateforApply.$valid &&  notificationFrm.$submitted }" type="date" name="startDateforApply" ng-model="formData.startDateforApply" ng-required="false">
+            </div>
+            <div class="w3-half">
+                <label>Last Date To Apply</label>
+                <input class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.lastDateforApply.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.lastDateforApply.$valid &&  notificationFrm.$submitted }" type="date" name="lastDateforApply" placeholder="Notification Posted Date" ng-model="formData.lastDateforApply" ng-required="false">
+            </div>
+        </div>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-half">
+                <label>Exam</label>
+                <input class="w3-input w3-border" ng-class="{ 'w3-border-red' : notificationFrm.examDate.$invalid && notificationFrm.$submitted, 'w3-border-green' :  notificationFrm.examDate.$valid &&  notificationFrm.$submitted }" type="date" name="examDate" ng-model="formData.examDate" ng-required="false">
+            </div>
+        </div>
+    </form>
+    <p><button class="w3-button w3-dark-grey" ng-click="save(notificationFrm)">Save </button></p>
+</div>

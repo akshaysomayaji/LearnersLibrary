@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-cloak>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto", sans-serif;
+        }
+
+        .w3-sidebar {
+            z-index: 3;
+            width: 250px;
+            top: 43px;
+            bottom: 0;
+            height: inherit;
+        }
+
+        .blockdisplay {
+            display: block;
+        }
+
+        .nonedisplay {
+            display: none;
+        }
+    </style>
+
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="content/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+
+</head>
+
+<body >
+    <ui-view class="w3-container"></ui-view>
+    <!-- AngularJS plugins -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="bower_components/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="bower_components/angularUtils-dirPagination/dirPagination.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/lodash.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/dist/angularjs-dropdown-multiselect.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="bower_components/angulartabs/tabs.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <!--scripts-->
+    <script src="app.js"></script>
+    <script src="mainController.js"></script>
+    <script src="routeConfig.js"></script>
+    <script src="module/notification/app.notification.module.js"></script>
+    <script src="module/notification/index/app.notification.index.module.js"></script>
+    <script src="module/notification/add/app.notification.add.module.js"></script>
+    <script src="module/notification/index/app.notification.index.controller.js"></script>
+    <script src="module/notification/add/app.notification.add.controller.js"></script>
+    <script src="module/notification/index/app.notification.index.service.js"></script>
+</body>
+</html>

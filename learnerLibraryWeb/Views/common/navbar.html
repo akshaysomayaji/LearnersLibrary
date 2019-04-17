@@ -1,0 +1,24 @@
+﻿    <!-- Navbar -->
+<div class="w3-top" ng-controller="menuController">
+    <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" ng-click="w3_open()"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-theme-l1"> Learners Library</a>
+        <a ng-repeat="menu in menuList" class="w3-bar-item w3-button w3-hover-white" ng-class="menu.isSelected === true ? 'w3-white' : ''" ui-sref="{{menu.url}}" ng-click="change(menu)">{{menu.displayName}}</a>
+
+    </div>
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar" ng-style="sidebarStyle">
+        <a href="javascript:void(0)" ng-click="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+            <i class="fa fa-remove"></i>
+        </a>
+        <h4 class="w3-bar-item"><b>Menu</b></h4>
+        <a class="w3-bar-item w3-button w3-hover-black" href="#">About</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="#">Rate Us</a>
+        <a class="w3-bar-item w3-button w3-hover-black" ui-sref="app.notification.add">Add Notification</a>
+    </nav>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" ng-click="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay" ng-style="sidebarStyle"></div>
+</div>
+
+
+
+
