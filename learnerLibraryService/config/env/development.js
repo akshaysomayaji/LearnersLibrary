@@ -2,7 +2,7 @@
 var tokenSecret = 'SuperSecret';
 var nodemailer = require("nodemailer");
 var smtpTransport = require("nodemailer-smtp-transport");
-var domain = 'http://localhost:57639';
+var domain = 'http://localhost:8080';
 var serverUrl = 'http://localhost'
 
 var smtpTransport = nodemailer.createTransport(smtpTransport({

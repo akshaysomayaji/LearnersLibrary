@@ -1,4 +1,5 @@
-﻿<div class="w3-row w3-padding-large w3-card-2" ng-repeat="data in formData">
+﻿<div class="w3-row w3-block w3-padding-32"> <div class="w3-centered" style="text-align:center;"><h3><b>Notification Details</b></h3></div> </div>
+<div class="w3-row w3-padding-large w3-card-2 " ng-repeat="data in formData">
     <div class="w3-col">
         <h1 class="w3-text-teal">{{data.notificationHeading}}</h1>
         <p> <b> Name : </b>{{data.notificationName}}</p>
@@ -7,6 +8,8 @@
         <p ng-if="data.startDateforApply"><b> Start Date to Apply : </b> {{data.startDateforApply | date:"dd-MMM-yyyy" }}</p>
         <p ng-if="data.lastDateforApply"><b> Last Date to Apply : </b> {{data.lastDateforApply | date:"dd-MMM-yyyy" }}</p>
         <p ng-if="data.examDate"><b> Exam Date : </b> {{data.examDate | date:"dd-MMM-yyyy" }}</p>
+        <p> <b> Links Below for reference :</b> <ul><li ng-repeat="link in data.links" ><a href="{{link}}" target="_blank">{{link}}</a></li></ul></p>
+
     </div>
 </div>
 <!-- Pagination -->

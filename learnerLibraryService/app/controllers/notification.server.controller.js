@@ -1,6 +1,6 @@
 ﻿var mongoose = require('mongoose'), notification = mongoose.model('notificationDetails');
 var NotificationHelper = require('../helpers/genericHelper').commonNotification;
-var nPerPage = 2;
+var nPerPage = 5;
 
 exports.addNotification = function (req, res, next) {
     console.log(req.body);

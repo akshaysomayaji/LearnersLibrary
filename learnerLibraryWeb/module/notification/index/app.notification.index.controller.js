@@ -10,11 +10,17 @@
         notificationService.getNotification(pageNumber).then(function (result) {
             console.log(result);
             $scope.formData = result.notification;
+            $scope.formData.forEach(function (obj) {
+                obj.links = obj.notificationReferenceLink.split(",");
+            });
+
         });
 
         notificationService.getPagination(pageNumber).then(function (result) {
             console.log(result);
             $scope.pager = result;
+            
+
         });
 
         $scope.setPage = function (pageNumber) {
