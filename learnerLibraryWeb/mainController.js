@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    angular.module("app.controllers", ['app.module.notification']).controller("menuController", menuController);
+    angular.module("app.controllers", ['app.module.notification','app.module.ca']).controller("menuController", menuController);
 
     function menuController($scope, $rootScope) {
         $rootScope.toggle = true;
@@ -18,13 +18,13 @@
         };
 
         $scope.w3_close = function () {
-            $rootScope.toggle = !$rootScope.toggle;;
+            $rootScope.toggle = !$rootScope.toggle;
             $rootScope.sidebarStyle = { 'display': 'none' };
         };
 
 
         $scope.menuList = [
-            { displayName: "Daily Current Affairs", name: "dca", isSelected: false, url: "" },
+            { displayName: "Daily Current Affairs", name: "dca", isSelected: false, url: "app.ca.index" },
             { displayName: "Exam Notification", name: "en", isSelected: false, url: "app.notification.index" },
             { displayName: "Course", name: "course", isSelected: false, url: "" },
             { displayName: "Downloads", name: "downloads", isSelected: false, url: "" },

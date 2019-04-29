@@ -46,11 +46,11 @@ var SubscriberesPasswordSchema = new Schema({
         type: Boolean, default: false,
         required: true
     },
-    isActive: {
+    active: {
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     },

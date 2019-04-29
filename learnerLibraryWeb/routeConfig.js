@@ -52,6 +52,13 @@
                         abstract: true,
                         template: '<ui-view></ui-view>',
 
+                })
+                .state('app.ca',
+                    {
+                        url: '/CurrentAffairs',
+                        abstract: true,
+                        template: '<ui-view></ui-view>',
+
                     })
                 .state('app.main', {
                     url: '/dashboard',

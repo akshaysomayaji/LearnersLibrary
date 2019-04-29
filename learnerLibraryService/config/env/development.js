@@ -27,7 +27,8 @@ var sessiontimeout = 15 * 60;
 
 module.exports = {
     port: port,
-    db: 'mongodb://localhost/BloggerDB',
+    //db: 'mongodb://49.207.52.49:32/Clustor0',
+    db:'mongodb://localhost/BloggerDB',
     'secret': 'superawesome',
     tokenSecret: tokenSecret,
     smtp: smtpTransport,
