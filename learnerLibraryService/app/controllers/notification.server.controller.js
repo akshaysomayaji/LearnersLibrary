@@ -1,38 +1,50 @@
-﻿var mongoose = require('mongoose'), notification = mongoose.model('notificationDetails');
-var NotificationHelper = require('../helpers/genericHelper').commonNotification;
+﻿var NotificationHelper = require('../helpers/genericHelper').commonNotification;
+var mongoClient = require('../../config/mongoClient');
 var nPerPage = 5;
+var mongoClient = require('../../config/mongoClient');
 
 exports.addNotification = function (req, res, next) {
-    console.log(req.body);
-    var notificationObj = new notification(req.body);
-    notificationObj.getnotificationid();
-    notificationObj.save(function (err, result) {
-        if (err) {
-            console.log(err);
-            res.send({ 'notification': [], success: false, msg: "", err: err });
-        } else {
-            res.send({ 'notification': result, success: true, msg: "Saved successfully", err: [] });
-        }
+    mongoClient.connectDb("notificationDetails").then(function (db) {
+        var notificationObj = new notification(req.body);
+        notificationObj.getnotificationid();
+        req.body.addedOn = new Date().toDateString();
+        req.body.active = true;
+        req.body.notificationPostedDate = new Date(req.body.notificationPostedDate);
+        req.body.notificationId = new Date().getTime().toString();
+        console.log(req.body)
+        db.db.collection("notificationDetailsCollection").insertOne(req.body, function (err, result) {
+            if (err) {
+                console.log(err)
+                res.send({ 'notification': [], success: false, msg: "", err: err });
+            } else {
+                res.send({ 'notification': result, success: true, msg: "Saved successfully", err: [] });
+            }
+        });
     });
 };
 
 
 exports.getNotification = function (req, res, next) {
-    var pageNumber = req.query.pageNumber;
+    mongoClient.connectDb("notificationDetails").then(function (db) {
+        var pageNumber = req.query.pageNumber;
+        db.db.collection("notificationDetailsCollection").find().skip(pageNumber > 0 ? ((pageNumber - 1) * nPerPage) : 0)
+            .limit(nPerPage).toArray(function (err, result) {
+                if (err) {
+                    res.send({ 'notification': [], success: false, msg: "", err: err, count: 0 });
+                } else {
+                    res.send({ 'notification': result, success: true, msg: "", err: [], count: result.length });
+                }
+            });
+    });
 
-    notification.find(function (err, result) {
-        if (err) {
-            res.send({ 'notification': [], success: false, msg: "", err: err, count : 0});
-        } else {
-            res.send({ 'notification': result, success: true, msg: "", err: [], count: result.length });          
-        }
-    }).skip( pageNumber > 0 ? ( ( pageNumber - 1 ) * nPerPage ) : 0 )
-             .limit( nPerPage );
+
 };
 
 exports.getPaginationArray = function (req, res, next) {
-    notification.find(function (err, result) {
-        getPager(result.length, req.query.currentPageNumber, nPerPage, res);
+    mongoClient.connectDb("notificationDetails").then(function (db) {
+        db.db.collection("notificationDetailsCollection").find().toArray(function (err, result) {
+            getPager(result.length, req.query.currentPageNumber, nPerPage, res);
+        });
     });
 }
 

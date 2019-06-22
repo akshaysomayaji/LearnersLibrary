@@ -1,25 +1,65 @@
-﻿var mongoose = require('mongoose'),
-    crypto = require('crypto'),
-    Schema = mongoose.Schema;
-mongoose.Promise = global.Promise;
+﻿
 
-var notificationDetailsSchema = new Schema({
-    notificationId: { type: String, unique: true, required: true, unique: true },
-    notificationHeading: { type: String, required: true },
-    notificationType: { type: String, required: true },
-    notificationName: { type: String, required: true },
-    notificationDetails: { type: String, required: true },
-    notificationPostedDate: { type: Date, required: true },
-    startDateforApply: { type: Date, required: false },
-    lastDateforApply: { type: Date, required: false, },
-    examDate: { type: Date, required: false },
-    notificationReferenceLink: { type: String, required: false },
-    addedOn: { type: Date, default: Date.now(), required: true },
-    active: { type: String, required: true, default: true },
-}, { collection: "notificationDetailsCollection" });
+var notificationSchemaObj = {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["notificationHeading", "notificationName", "notificationType", "notificationDetails", "notificationPostedDate", "addedOn", "active","notificationId"],
+            properties: {
+                notificationId: {
+                    bsonType: "string",
+                    description: "notificationId be a string and is required"
+                },
+                notificationHeading: {
+                    bsonType: "string",
+                    description: "notificationHeading must be a string and is required"
+                },
+                notificationType: {
+                    bsonType: "string",
+                    description: "notificationType must be a string and is required"
+                },
+                notificationName: {
+                    bsonType: "string",
+                    description: "notificationName must be a string and is required"
+                },
+                notificationDetails: {
+                    bsonType: "string",
+                    description: "notificationDetails must be a string and is required"
+                },
+                notificationPostedDate: {
+                    bsonType: "date",
+                    description: "must be a date and is required"
+                },
+                examDate: {
+                    bsonType: "date",
+                    description: "must be a date and is not required"
+                },
+                startDateforApply: {
+                    bsonType: "date",
+                    description: "must be a date and is not required"
+                },
+                lastDateforApply: {
+                    bsonType: "date",
+                    description: "must be a date and is not required"
+                },
+                notificationReferenceLink: {
+                    bsonType: "string",
+                    description: "notificationDetails must be a string and is required"
+                },
+                addedOn: {
+                    bsonType: "string",
+                    description: "notificationDetails must be a string and is required"
+                },
+                active: {
+                    bsonType: "bool",
+                    description: "notificationDetails must be a string and is required"
+                }
+            }
+        }
+    },
+     validationLevel: "moderate"
+};
 
-notificationDetailsSchema.methods.getnotificationid = function () {
-    this.notificationId = new Date().getTime().toString();
-}
-
-mongoose.model("notificationDetails", notificationDetailsSchema);
+module.exports = function (db) {
+    db.createCollection("notificationDetailsCollection", notificationSchemaObj);
+};

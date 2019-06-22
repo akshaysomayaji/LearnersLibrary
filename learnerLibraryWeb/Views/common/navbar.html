@@ -4,6 +4,9 @@
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" ng-click="w3_open()"><i class="fa fa-bars"></i></a>
         <a href="#" class="w3-bar-item w3-button w3-theme-l2" style="width:200px;"> Learners Library</a>
         <a ng-repeat="menu in menuList" class="w3-bar-item w3-button w3-hide-medium w3-hover-white w3-medium" ng-class="menu.isSelected === true ? 'w3-white' : ''" ui-sref="{{menu.url}}" ng-click="change(menu)">{{menu.displayName}}</a>
+        <div class="pull-right">
+            <a class="w3-bar-item w3-button w3-theme-l2" ng-click="loginModel()">Login</a>
+        </div>
     </div>
     <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar" ng-style="sidebarStyle">
         <a href="javascript:void(0)" ng-click="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">

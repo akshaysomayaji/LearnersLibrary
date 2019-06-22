@@ -1,5 +1,5 @@
 ﻿process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-var config = require('./config/config'),mongoose = require('./config/mongoose'),express = require('./config/express');
+var config = require('./config/config'), mongoose = require('./config/mongoose'), express = require('./config/express');
 const cluster = require('cluster');
 const http = require('http');
 const numCPUs = require('os').cpus().length;
@@ -7,6 +7,7 @@ const numCPUs = require('os').cpus().length;
 var db = mongoose(),
     app = express();
 module.exports = app;
+
 var port = config.port;
 
 
@@ -25,6 +26,8 @@ if (cluster.isMaster) {
     });
     console.log(`Worker ${process.pid} started`);
 }
+
+
 
 
 

@@ -22,11 +22,11 @@ var SubscriberesSchema = new Schema({
         unique: true,
         required: false
     },
-    isActive: {
+    active: {
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     }

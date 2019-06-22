@@ -27,7 +27,7 @@ var sessiontimeout = 15 * 60;
 
 module.exports = {
     port: port,
-    //db: 'mongodb://49.207.52.49:32/Clustor0',
+    dbname: 'mongodb://dbuser:Password%21@librarycluster-shard-00-00-974x2.mongodb.net:27017,librarycluster-shard-00-01-974x2.mongodb.net:27017,librarycluster-shard-00-02-974x2.mongodb.net:27017/LibraryDb?ssl=true&replicaSet=LibraryCluster-shard-0&authSource=admin&retryWrites=true&w=majority',    
     db:'mongodb://localhost/BloggerDB',
     'secret': 'superawesome',
     tokenSecret: tokenSecret,

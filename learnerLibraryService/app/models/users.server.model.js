@@ -1,7 +1,7 @@
 ﻿var mongoose = require('mongoose'),
 	crypto = require('crypto'),
 	Schema = mongoose.Schema;
-    mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 
 var UserSchema = new Schema({
@@ -22,11 +22,11 @@ var UserSchema = new Schema({
         unique: true,
         required:false
     },
-    isActive: {
+    active: {
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     }, userrole: {
@@ -49,11 +49,11 @@ var UserPasswordSchema = new Schema({
         type: Boolean, default: false,
         required: true
     },
-    isActive: {
+    active: {
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     },
@@ -78,7 +78,7 @@ var user_otp_schema = new Schema({
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     },
@@ -98,7 +98,7 @@ var userRolesSchema = new Schema({
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     }
@@ -122,7 +122,7 @@ var user_login_log = new Schema({
         type: String,
         required: false
     },
-    isActive: {
+    active: {
         type: Boolean, default: true
     },
     txtUserId: {

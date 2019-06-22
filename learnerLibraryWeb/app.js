@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    angular.module('app', ['ui.router', 'ngSanitize', 'oc.lazyLoad','app.controllers'])
+    angular.module('app', ['ui.select','ui.router','ui.bootstrap', 'ngSanitize', 'oc.lazyLoad','app.controllers'])
         .constant('AUTH_EVENTS', {
             notAuthenticated: 'auth-not-authenticated'
         }).constant('API_ENDPOINT', {

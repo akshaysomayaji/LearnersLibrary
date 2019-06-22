@@ -9,11 +9,11 @@ var tagsSchema = new Schema({
         type: String,
         required: true
     },
-    isActive: {
+    active: {
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     }

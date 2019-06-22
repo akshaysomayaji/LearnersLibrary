@@ -1,8 +1,10 @@
 ﻿(function () {
     'use strict';
-    angular.module("app.controllers", ['app.module.notification','app.module.ca']).controller("menuController", menuController);
+    angular.module("app.controllers", ['app.module.notification', 'app.module.ca'])
+        .controller("menuController", menuController)
+        .controller("loginCtrl", loginCtrl);
 
-    function menuController($scope, $rootScope) {
+    function menuController($scope, $rootScope, $uibModal) {
         $rootScope.toggle = true;
         $rootScope.sidebarStyle = { 'display': 'none' };
 
@@ -41,5 +43,30 @@
                 }
             })
         }
+
+        $scope.loginModel = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                controller: 'loginCtrl',
+                templateUrl: 'Views/pages/login.html',
+                scope: $scope,
+                backdrop: 'static',
+                keyboard: true,
+                size: 'md',
+                //resolve: {
+                //    items: function () {
+                //        return $scope.formData;
+                //    }
+                //}
+            });
+            modalInstance.result.then(function () {
+            }, function () { });
+        };
+    }
+
+    function loginCtrl($scope, $uibModalInstance) {
+        $scope.closeModal = function () {
+            $uibModalInstance.close();
+        };
     }
 })();

@@ -1,14 +1,15 @@
 ﻿var config = require('./config'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),mongoClient = require('mongodb').MongoClient;
 
 module.exports = function () {
-    var options = {
-        server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 0, socketTimeoutMS: 0 } }
-        //, user: "dbuser", pass: "Password!"
-    };
+
     mongoose.Promise = global.Promise;
-    var db = mongoose.connect(config.db, options);
+    var db = mongoose.connect(config.db.toString());
+
     require('../app/models/users.server.model.js');
-    require('../app/models/notification.server.model.js');
+   
+    mongoClient.connect(config.dbname, function (err, db) {
+        require('../app/models/notification.server.model.js')(db);
+    });
     return db;
 };

@@ -1,19 +1,36 @@
-<div class="w3-container w3-half w3-margin-top">
-    <form class="w3-container w3-card-6">
-        <p>
-            <input class="w3-input" type="text" style="width:90%" required>
-            <label>Name</label>
-        </p>
-        <p>
-            <input class="w3-input" type="password" style="width:90%" required>
-            <label>Password</label>
-        </p>
-        <p>
-            <input id="milk" class="w3-check" type="checkbox" checked="checked">
-            <label>Stay logged in</label>
-        </p>
-        <p>
-            <button class="w3-button w3-section w3-teal w3-ripple"> Log in </button>
-        </p>
-    </form>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="closeModal()">&times;</button>
+            <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+            <div class="w3-container w3-half w3-margin-top">
+                <form class="w3-container w3-card-6">
+                    <p>
+                        <input class="w3-input" type="text" style="width:90%" required>
+                        <label>Name</label>
+                    </p>
+                    <p>
+                        <input class="w3-input" type="password" style="width:90%" required>
+                        <label>Password</label>
+                    </p>
+                    <p>
+                        <input id="milk" class="w3-check" type="checkbox" checked="checked">
+                        <label>Stay logged in</label>
+                    </p>
+                    <p>
+                        <button class="w3-button w3-section w3-teal w3-ripple"> Log in </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeModal()">Close</button>
+        </div>
+    </div>
 </div>

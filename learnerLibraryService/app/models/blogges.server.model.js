@@ -3,14 +3,17 @@
     Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
+var mongoClient = require('mongodb').MongoClient;
+var config = require('./config');
+
 var blogSchema = new Schema({
     blogTitle: {
         type: String,
-        required: true
+        required: [true, 'Blogger title is required']
     },
     blogBody: {
         type: String,
-        required: true
+        required: [true, 'Blogger details is required']
     },
     blogFiles: [
         {
@@ -39,11 +42,11 @@ var blogSchema = new Schema({
         type: String,
         required: true
     },
-    isActive: {
+    active: {
         type: Boolean, default: true,
         required: true
     },
-    createdDate: {
+    addedOn: {
         type: Date, default: Date.now(),
         required: true
     }
